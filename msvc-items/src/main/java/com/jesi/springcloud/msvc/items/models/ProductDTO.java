@@ -8,6 +8,13 @@ public class ProductDTO {
     private String name;
     private Double price;
     private LocalDate createAt;
+    //cuidado: los nombres deben llamarse igual al del microservicio del producto sino Jackson 
+    // puede no asignar ese valor al campo createAt, y me manda null.
+    /*Solucion 
+    1- Cambio el nombre del dto igual al del msvc-product
+    2-Uso JSON Property
+     @JsonProperty("createAT")
+     */
     
     public Long getId() {
         return id;

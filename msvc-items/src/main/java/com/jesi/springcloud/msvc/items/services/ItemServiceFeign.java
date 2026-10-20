@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.jesi.springcloud.msvc.items.clients.ProductFeignClientHttp;
 import com.jesi.springcloud.msvc.items.models.ItemDTO;
+import com.jesi.springcloud.msvc.items.models.ProductDTO;
+
+import feign.FeignException;
 
 @Service
 public class ItemServiceFeign implements ItemService {
@@ -33,8 +36,15 @@ public class ItemServiceFeign implements ItemService {
 
     @Override
     public Optional<ItemDTO> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+
+        try {
+            ProductDTO product = clientHttp.details(id);
+            return Optional.of(new ItemDTO(product, new Random().nextInt(10) + 1));
+
+        } catch (FeignException e) {
+            return Optional.empty();
+        }
+
     }
 
 }

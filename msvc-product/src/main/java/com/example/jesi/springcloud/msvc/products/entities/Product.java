@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity 
 @Table (name = "products")
@@ -19,8 +20,12 @@ public class Product {
     private  Double price;
 
     @Column(name = "create_at")
-    private LocalDate createAT;
+    private LocalDate createAt;
 
+    @Transient 
+    private int port;//es un atributo que me sirve para el balanceo de carga
+
+    
     public Long getId() {
         return id;
     }
@@ -45,14 +50,21 @@ public class Product {
         this.price = price;
     }
 
-    public LocalDate getCreateAT() {
-        return createAT;
+    public LocalDate getCreateAt() {
+        return createAt;
     }
 
-    public void setCreateAT(LocalDate createAT) {
-        this.createAT = createAT;
+    public void setCreateAt(LocalDate createAT) {
+        this.createAt = createAT;
     }
 
-    
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
 
 }

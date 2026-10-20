@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MsvcItemsApplication",
+            "request": "launch",
+            "mainClass": "com.jesi.springcloud.msvc.items.MsvcItemsApplication",
+            "projectName": "msvc-items"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-MsvcProductApplication<msvc-product>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
