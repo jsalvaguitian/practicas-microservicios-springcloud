@@ -31,7 +31,6 @@ public class ItemServiceFeign implements ItemService {
                         product -> new ItemDTO(product,
                                 new Random().nextInt(10) + 1))
                 .collect(Collectors.toList());
-
     }
 
     @Override
