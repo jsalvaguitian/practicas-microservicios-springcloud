@@ -18,8 +18,11 @@ como nuestro repositorio.
 3-Los nombres de los metodos y tipo de dato de retorno no es necesario
 que sea lo mismo como en el microservicio de producto
 */
-
-@FeignClient(url = "localhost:8001", name = "msvc-product") //esto no seria necesario si usaramos el Servidor de nombre Eureka
+/*
+Al hacer el balanceo de carga DEL LADO DEL CLIENTE con Cloud LoadBalancer
+ya no se requiere la url = "localhost:8001" anotada en productFeign 
+ */
+@FeignClient( name = "msvc-product") //esto no seria necesario si usaramos el Servidor de nombre Eureka
 public interface ProductFeignClientHttp {
 
     @GetMapping("/api/products")
