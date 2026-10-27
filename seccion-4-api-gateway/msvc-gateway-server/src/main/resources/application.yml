@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: msvc-gateway-server
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: msvc-product
+              uri: lb://msvc-product
+              predicates:
+                - Path=/api/products/**
+
+            - id: msvc-items
+              uri: lb://msvc-items
+              predicates:
+                - Path=/api/items/**
+              filters:
+                - StripPrefix=2
+            
