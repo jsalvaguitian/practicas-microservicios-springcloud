@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-@RestController 
+@RestController
 @RequestMapping("/api/products")
 public class ProductController {
 
