@@ -11,11 +11,12 @@ spring:
               uri: lb://msvc-product
               predicates:
                 - Path=/api/products/**
-
+              filters:
+                - SampleCookie= Hola mi mensaje personalizado para productos, my-cookie-user, Jesi
             - id: msvc-items
               uri: lb://msvc-items
               predicates:
                 - Path=/api/items/**
               filters:
                 - StripPrefix=2
-            
+                
