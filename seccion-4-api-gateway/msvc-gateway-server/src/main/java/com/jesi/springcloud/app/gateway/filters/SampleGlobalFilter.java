@@ -54,8 +54,7 @@ public class SampleGlobalFilter implements GlobalFilter, Ordered {
                     ResponseCookie.from("color", "red").build()
             );
 
-            modifiedExchange.getResponse().getHeaders()
-                    .setContentType(MediaType.TEXT_PLAIN);
+           // modifiedExchange.getResponse().getHeaders() .setContentType(MediaType.TEXT_PLAIN);
         }));
     }
     @Override

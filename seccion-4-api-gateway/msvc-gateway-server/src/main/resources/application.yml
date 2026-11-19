@@ -12,11 +12,14 @@ spring:
               predicates:
                 - Path=/api/products/**
               filters:
-                - SampleCookie= Hola mi mensaje personalizado para productos, my-cookie-user, Jesi
+                - EjemploCookie= Hola mi mensaje personalizado para productos, my-cookie-user, Jesi
             - id: msvc-items
               uri: lb://msvc-items
               predicates:
                 - Path=/api/items/**
-              filters:
+              filters: #Tener cuidado con los espacios, no dejar espacio entre el filtro y el igual.
                 - StripPrefix=2
-                
+                - AddRequestHeader=token-request, aabbsjdf
+                - AddResponseHeader=token-response, 23456779
+                - AddRequestParameter= name, Jesi
+                - SetResponseHeader= Content-Type, text/plain

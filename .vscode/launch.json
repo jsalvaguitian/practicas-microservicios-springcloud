@@ -1,0 +1,51 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MsvcProductApplication",
+            "request": "launch",
+            "mainClass": "com.example.jesi.springcloud.msvc.products.MsvcProductApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<com.jesi.springcloud.eureka.app-eureka-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jesi.springcloud.eureka.app.eureka_server.EurekaServerApplication",
+            "projectName": "com.jesi.springcloud.eureka.app-eureka-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcProductApplication<com.example.jesi.springcloud.msvc.products-msvc-product>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.jesi.springcloud.msvc.products.MsvcProductApplication",
+            "projectName": "com.example.jesi.springcloud.msvc.products-msvc-product",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcItemsApplication<com.jesi.springcloud.msvc.items-msvc-items>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jesi.springcloud.msvc.items.MsvcItemsApplication",
+            "projectName": "com.jesi.springcloud.msvc.items-msvc-items",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcGatewayServerApplication<com.jesi.springcloud.app.gateway-msvc-gateway-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jesi.springcloud.app.gateway.MsvcGatewayServerApplication",
+            "projectName": "com.jesi.springcloud.app.gateway-msvc-gateway-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
