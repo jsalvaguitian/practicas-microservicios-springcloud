@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: msvc-gateway-server
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: msvc-product
+              uri: lb://msvc-product
+              predicates:
+                 - Path=/api/products/**
+                # - Header= token, \d+
+                # - Method= GET, POST
+                # - Query= color #se puede enviar un parametro sin valor (para poner cualquier valor en el request) o con valor: color, verde
+                # - Cookie= color, azul
+                # - Header= Content-Type, application/json
+              filters:
+                - EjemploCookie= Hola mi mensaje personalizado para productos, my-cookie-user, Jesi
+            - id: msvc-items
+              uri: lb://msvc-items
+              predicates:
+                - Path=/api/items/**
+              filters: #Tener cuidado con los espacios, no dejar espacio entre el filtro y el igual.
+                - StripPrefix=2
+                - AddRequestHeader=token-request, aabbsjdf
+                - AddResponseHeader=token-response, 23456779
+                - AddRequestParameter= name, Jesi
+                - SetResponseHeader= Content-Type, text/plain
