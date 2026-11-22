@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcGatewayServerApplication<msvc-gateway-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jesi.springcloud.app.gateway.MsvcGatewayServerApplication",
+            "projectName": "msvc-gateway-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcProductApplication<msvc-product>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.jesi.springcloud.msvc.products.MsvcProductApplication",
+            "projectName": "msvc-product",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<eureka-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jesi.springcloud.eureka.app.eureka_server.EurekaServerApplication",
+            "projectName": "eureka-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsvcItemsApplication<msvc-items>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jesi.springcloud.msvc.items.MsvcItemsApplication",
+            "projectName": "msvc-items",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
