@@ -46,7 +46,7 @@ public class ProductController {
         }
 
         if(id.equals(7L)){
-            TimeUnit.SECONDS.sleep(5L);
+            TimeUnit.SECONDS.sleep(4L); //por defecto 1seg tiempo de espera para la respuesta del servicio
         }
 
         

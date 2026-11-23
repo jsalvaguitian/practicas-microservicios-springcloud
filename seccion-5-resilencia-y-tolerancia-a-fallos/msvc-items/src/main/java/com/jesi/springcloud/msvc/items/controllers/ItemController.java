@@ -49,7 +49,7 @@ public class ItemController {
     public ResponseEntity<?> details(@PathVariable Long id) {
 
         Optional<ItemDTO> item = cBreakerFactory.create("items").run(()-> service.findById(id), e -> {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()); //camino alternativo cuando el servicio falla
             logger.error(e.getMessage());
 
             ProductDTO productDTO = new ProductDTO();
